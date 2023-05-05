@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { PipesExComponent } from './pipes-ex/pipes-ex.component';
 import { FormsModule } from '@angular/forms';
 import { PipePipe } from './pipe.pipe';
+import { PromiseObservableComponent } from './promise-observable/promise-observable.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PipesExComponent,
-    PipePipe
+    PipePipe,
+    PromiseObservableComponent
   ],
   imports: [
     BrowserModule,
