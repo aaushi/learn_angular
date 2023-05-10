@@ -7,13 +7,17 @@ import { PipesExComponent } from './pipes-ex/pipes-ex.component';
 import { FormsModule } from '@angular/forms';
 import { PipePipe } from './pipe.pipe';
 import { PromiseObservableComponent } from './promise-observable/promise-observable.component';
+import { ViewchildExampleComponent } from './viewchild-example/viewchild-example.component';
+import { ChildComponent } from './viewchild-example/child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PipesExComponent,
     PipePipe,
-    PromiseObservableComponent
+    PromiseObservableComponent,
+    ViewchildExampleComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
