@@ -9,6 +9,9 @@ import { PipePipe } from './pipe.pipe';
 import { PromiseObservableComponent } from './promise-observable/promise-observable.component';
 import { ViewchildExampleComponent } from './viewchild-example/viewchild-example.component';
 import { ChildComponent } from './viewchild-example/child/child.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HeadersInterceptor } from './headers.interceptor';
+import { LoggingInterceptor } from './logging.interceptor';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,13 @@ import { ChildComponent } from './viewchild-example/child/child.component';
     PipePipe,
     PromiseObservableComponent,
     ViewchildExampleComponent,
-    ChildComponent
+    ChildComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HeadersInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
