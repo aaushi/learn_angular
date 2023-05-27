@@ -1,0 +1,13 @@
+<form [formGroup]="reactiveForm" (ngSubmit)="login()">
+  <label for="username" >UserName: </label>
+  <input id="username" type="text" formControlName="username" />
+  <div>
+    <small *ngIf="reactiveForm.get('username').errors?.required">Username cannot be left blank</small>
+    <small *ngIf="reactiveForm.get('username').errors?.noSpaceAllowed">Username cannot have a space</small>
+  </div>
+
+  <label for="password" >password: </label>
+  <input id="password" type="text" formControlName="password"/>
+
+  <button type="submit">Login</button>
+</form>
