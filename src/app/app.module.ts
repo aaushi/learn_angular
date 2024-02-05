@@ -16,8 +16,16 @@ import { ManualPipe } from './pipes/manualpipe.pipe';
 import { ParentComponent } from './parent/parent.component';
 import { Child1Component } from './parent/child1/child1.component';
 import { ListingsComponent } from './listings/listings.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ViewchildExampleComponent } from './viewchild-example/viewchild-example.component';
+import { MyFormComponent } from './my-form/my-form.component';
+import { PromiseObservableComponent } from './promise-observable/promise-observable.component';
+import { PipesExComponent } from './pipes-ex/pipes-ex.component';
+import { ChildComponent } from './viewchild-example/child/child.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ChildrenOutletContexts, RouterModule } from '@angular/router';
+
 //import {MatToolbar} from '@angular/material/toolbar';
 
 
@@ -34,8 +42,14 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ManualPipe,
     ParentComponent,
     Child1Component,
-    ListingsComponent
-    
+    ListingsComponent,
+    ViewchildExampleComponent,
+    MyFormComponent,
+    PromiseObservableComponent,
+    PipesExComponent,
+    ChildComponent,
+
+    Child1Component,
   ],
   imports: [
     BrowserModule,
@@ -43,10 +57,13 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatCardModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
     //MatToolbar
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ChildrenOutletContexts],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

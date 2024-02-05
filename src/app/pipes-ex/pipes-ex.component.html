@@ -10,6 +10,6 @@
 </div>
 
 <input type="text" [(ngModel)]="filteredString"/>
-<div *ngFor="let users of user | pipe:filteredString">
+<div *ngFor="let users of user | uxpipe:filteredString">
     {{users.name}} {{users.age}}
 </div>
