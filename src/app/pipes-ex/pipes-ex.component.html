@@ -1,0 +1,15 @@
+
+<div *ngFor="let users of user">
+    {{users.name}} {{users.age}}
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <button (click)="addUser()">Add User</button>
+    </div>
+</div>
+
+<input type="text" [(ngModel)]="filteredString"/>
+<div *ngFor="let users of user | pipe:filteredString">
+    {{users.name}} {{users.age}}
+</div>

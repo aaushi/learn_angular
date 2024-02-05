@@ -1,0 +1,17 @@
+<p #highlight>viewchild-example works!</p>
+
+<p #highlight>viewchild-example2 works!</p>
+
+
+<p #highlightChildren>viewChildren-example works!</p>
+
+<p #highlightChildren>viewChildren-example2 works!</p>
+
+<p #highlightChildren>viewChildren-example3 works!</p>
+
+<p #highlightChildren>viewChildren-example4 works!</p>
+
+<h3>Count: {{child?.counter}}</h3>
+<button (click)="inc()">Increment</button>
+<button (click)="dec()">Decrement></button>
+<app-child #childView></app-child>

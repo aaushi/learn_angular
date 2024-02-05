@@ -49,4 +49,4 @@ import {MatExpansionModule} from '@angular/material/expansion';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
