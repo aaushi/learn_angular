@@ -35,10 +35,11 @@ pr.then(function(name){
 
 //************************Observable************************** */
 
-const observable=new Observable((subscriber)=>{
-    subscriber.next("1");
-    subscriber.next("2");
-    subscriber.next("3");
+const observable=new Observable((observer)=>{
+    observer.next('1');
+    observer.next('2');
+    observer.next('3');
+    observer.complete();
 })
 
 this.subscription=observable.subscribe(res=>console.log(res));
