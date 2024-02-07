@@ -28,6 +28,7 @@ import { ChildrenOutletContexts, RouterModule } from '@angular/router';
 import { UserEntryFormComponent } from './user-entry-form/user-entry-form.component';
 import { RegistrationFormComponent } from './user-entry-form/registration-form/registration-form.component';
 import { LoginFormComponent } from './user-entry-form/login-form/login-form.component';
+import { WelcomePageComponent } from './user-entry-form/welcome-page/welcome-page.component';
 
 //import {MatToolbar} from '@angular/material/toolbar';
 
@@ -59,6 +60,7 @@ import { LoginFormComponent } from './user-entry-form/login-form/login-form.comp
     RegistrationFormComponent,
 
     LoginFormComponent,
+      WelcomePageComponent,
   ],
   imports: [
     BrowserModule,

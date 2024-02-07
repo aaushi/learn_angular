@@ -10,6 +10,7 @@ import { ParentComponent } from './parent/parent.component';
 import { UserEntryFormComponent } from './user-entry-form/user-entry-form.component';
 import { RegistrationFormComponent } from './user-entry-form/registration-form/registration-form.component';
 import { LoginFormComponent } from './user-entry-form/login-form/login-form.component';
+import { WelcomePageComponent } from './user-entry-form/welcome-page/welcome-page.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'userAuthForm', component: UserEntryFormComponent },
   { path: 'register', component: RegistrationFormComponent },
   { path: 'login', component: LoginFormComponent },
+  { path: 'welcome', component: WelcomePageComponent },
   { path: '', component: ParentComponent },
 ];
 

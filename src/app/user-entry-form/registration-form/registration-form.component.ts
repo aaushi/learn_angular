@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -7,6 +7,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { UserInterface } from '../user.interface';
+import { AuthService } from '../auth.service';
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-registration-form',
@@ -15,6 +17,8 @@ import { UserInterface } from '../user.interface';
 })
 export class RegistrationFormComponent implements OnInit {
   registrationForm: FormGroup;
+  authService=inject(AuthService);
+  router=inject(Router);
 
   constructor(private http: HttpClient) {}
 
@@ -27,8 +31,15 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   onSignUp() {
-    this.http.post<{user:UserInterface}>('https://api.realworld.io/api/users', {
-      user: this.registrationForm.getRawValue(),
-    }).subscribe(res=>{console.log(res); localStorage.setItem('token',res.user.token)})
+    this.http
+      .post<{ user: UserInterface }>('https://api.realworld.io/api/users', {
+        user: this.registrationForm.getRawValue(),
+      })
+      .subscribe((res) => {
+        console.log(res);
+        localStorage.setItem('token', res.user.token);
+        this.authService.currentUserSignal.set(res.user);
+        this.router.navigateByUrl('/userAuthForm');
+      });
   }
 }
