@@ -25,6 +25,9 @@ import { PipesExComponent } from './pipes-ex/pipes-ex.component';
 import { ChildComponent } from './viewchild-example/child/child.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChildrenOutletContexts, RouterModule } from '@angular/router';
+import { UserEntryFormComponent } from './user-entry-form/user-entry-form.component';
+import { RegistrationFormComponent } from './user-entry-form/registration-form/registration-form.component';
+import { LoginFormComponent } from './user-entry-form/login-form/login-form.component';
 
 //import {MatToolbar} from '@angular/material/toolbar';
 
@@ -50,6 +53,12 @@ import { ChildrenOutletContexts, RouterModule } from '@angular/router';
     ChildComponent,
 
     Child1Component,
+
+    UserEntryFormComponent,
+
+    RegistrationFormComponent,
+
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
